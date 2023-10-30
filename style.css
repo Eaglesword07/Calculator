@@ -4,15 +4,24 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Helvetica, Arial, sans-serif;
-    /* background-color: #000; */
-    /* color: #fff; */
+    background-color: #000;
+    color: #fff;
 }
 
 .main-container {
     max-width: 330px;
-    margin: 50px auto;
-    border: 1px solid #000;
+    margin: 30px auto;
+    border: .5px solid #42e66b;
     border-radius: 10px;
+    position: relative;
+}
+
+.calculator-icon {
+    font-size: 40px !important;
+    position: absolute;
+    right: 42%;
+    top: -30px;
+    color: rgb(66, 230, 107)
 }
 
 .screen-container {
@@ -22,9 +31,7 @@
 .screen-container,
 .buttons-container {
     width: 100%;
-    height: 100px;
     margin: 10px 0px;
-    border: 1px solid #000;
     border-radius: 5px;
 }
 
@@ -32,21 +39,21 @@ output {
     display: block;
     width: 100%;
     margin: 0px;
-    text-align: center;
+    text-align: right;
     cursor: auto;
 }
 
-.screen-container span {
-    display: block;
-}
-
-.question {
+.user-input {
     height: 50px;
-    font-size: 100%;
+    font-size: 35px;
+    line-height: 35px;
+    margin-bottom: 30px;
 }
 
 .answer {
-    height: 30px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
 }
 
 .menu {
@@ -77,25 +84,27 @@ output {
     border-radius: 50%;
     cursor: pointer;
     color: #fff;
-    background-color:rgb(32, 39, 44) ;
+    background-color:rgb(22, 26, 29) ;
 }
 
 .equals-btn {
     background-color: rgb(28, 171, 64);
-}
-
-.green-color {
-    color: rgb(66, 230, 107);
-}
-
-.red-color {
-    color: rgb(238, 109, 109);
-}
-
-.mid-text {
     font-size: 35px;
 }
 
-.outlined-green {
+.bracket {
+    color: rgb(66, 230, 107);
+}
+
+.clear-btn {
+    color: rgb(238, 109, 109);
+}
+
+.operator {
+    font-size: 35px;
+    color: rgb(66, 230, 107);
+}
+
+.backspace {
     color: rgb(0, 139, 0);
 }
