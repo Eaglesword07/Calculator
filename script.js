@@ -16,11 +16,11 @@ const equalsTo = document.querySelector('.equals-btn');
 // document.addEventListener("keydown", function (event) { console.log(event); });
 
 // -------- Event Listeners for Onclick events --------
-function clearBtnAction () {
+function clearBtnAction() {
     operationDisplay.innerText = '';
 }
 
-function backspaceAction () {
+function backspaceAction() {
     const newValue = operationDisplay.value.slice(0, -1);
     operationDisplay.value = newValue;
 }
@@ -52,7 +52,7 @@ function handlerOnKeydown(e) {
     } if (e.key >= 0 && e.key <= 9) {
         operationDisplay.innerText += e.key;
     } if (e.key === '+' || e.key === '-' || e.key === '*' ||
-    e.key === '/' || e.key === '%' || e.key === '.') {
+        e.key === '/' || e.key === '%' || e.key === '.') {
         operationDisplay.innerText += e.key;
     } if (e.key === 'Delete' || e.key === 'c' || e.key === 'Escape' || e.key === 'clear') {
         clearBtnAction();
@@ -60,3 +60,55 @@ function handlerOnKeydown(e) {
 }
 
 document.addEventListener('keydown', handlerOnKeydown);
+
+
+// ------------------Create fucntions for all operations--------------------
+const add = function (a, b) {
+    return a + b;
+}
+
+const subtract = function (a, b) {
+    return a - b;
+}
+
+const multiply = function (a, b) {
+    return a * b;
+}
+
+const divide = function (a, b) {
+    return a / b;
+}
+
+const modulo = function (a, b) {
+    return a % b;
+}
+
+
+function operation() {
+    let firstOperand = parseFloat(operationDisplay.innerText[0]);
+    let secondOperand = parseFloat(operationDisplay.innerText[2]);
+    let operator = operationDisplay.innerText[1];
+    let result;
+    switch (operator) {
+        case '+':
+            result = add(firstOperand, secondOperand);
+            break;
+        case '-':
+            result = subtract(firstOperand, secondOperand);
+            break;
+        case 'x':
+            result = multiply(firstOperand, secondOperand);
+            break;
+        case '/':
+            result = divide(firstOperand, secondOperand);
+            break;
+        case '%':
+            result = modulo(firstOperand, secondOperand);
+            break; 
+        default:
+            return;
+    }                     answerDisplay.innerText = result;
+
+}
+
+equalsTo.addEventListener('click', operation);
